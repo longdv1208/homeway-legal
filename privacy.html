@@ -45,7 +45,7 @@
   <li>Công việc giúp việc, lịch rảnh, khu vực làm việc, trao đổi giữa hai bên.</li>
   <li>Đánh giá, bình luận, cờ cảnh báo bạn tạo hoặc nhận.</li>
   <li>Số lượt bạn tự chọn xem quảng cáo ủng hộ Ứng dụng (chỉ đếm số lượt).</li>
-  <li><strong>Câu bạn gõ ở thanh "Gõ một câu để điền nhanh"</strong> (nếu bạn dùng): chỉ được dùng để điền sẵn các ô của biểu mẫu Tìm chuyến hoặc Đăng lịch rảnh. Phần lớn câu được hiểu ngay trên máy của bạn. Câu nào máy chưa hiểu thì được gửi tới dịch vụ AI nêu ở mục 5, sau khi đã tự động che số điện thoại và email. Chúng tôi không lưu câu này trên máy chủ, chỉ đếm số lượt bạn đã dùng trong ngày.</li>
+  <li><strong>Câu bạn gõ hoặc nói với Trợ lý tìm chuyến và Trợ lý đăng lịch rảnh</strong> (nếu bạn dùng): chỉ được dùng để hiểu nhu cầu của bạn, tức điểm đi, điểm đến, ngày giờ, số ghế, loại việc, khu vực. Phần lớn câu được hiểu ngay trên máy của bạn. Câu nào máy chưa hiểu thì được gửi tới dịch vụ AI nêu ở mục 5, sau khi đã tự động che số điện thoại và email. Chúng tôi không lưu cuộc trò chuyện này trên máy chủ, chỉ đếm số lượt bạn đã dùng trong ngày. Nếu bạn nói thay vì gõ, việc chuyển giọng nói thành chữ do bàn phím của điện thoại thực hiện (Apple hoặc Google), Ứng dụng không ghi âm và không nhận âm thanh.</li>
 </ul>
 <h3>2.4. Dữ liệu kỹ thuật</h3>
 <ul>
@@ -86,7 +86,7 @@
   <li><strong>Dịch vụ bản đồ</strong> (Google Maps Platform, Goong, HERE, LocationIQ): nhận toạ độ hoặc địa chỉ để tìm địa điểm và tính đường đi.</li>
   <li><strong>Zalo, Google, Facebook, Apple</strong>: xác thực khi bạn chọn đăng nhập bằng các tài khoản này.</li>
   <li><strong>Telegram</strong>: chuyển góp ý và báo cáo vi phạm tới quản trị viên; xác thực số điện thoại nếu bạn chọn dùng.</li>
-  <li><strong>Dịch vụ AI</strong> (Groq; khi cần có thể dùng Cloudflare Workers AI hoặc OpenRouter): nhận câu bạn gõ ở thanh "Gõ một câu để điền nhanh" để rút ra ngày, giờ, địa điểm, số ghế, loại việc. Câu được gửi không kèm tên, mã tài khoản hay vị trí của bạn; số điện thoại và email trong câu được che trước khi gửi. Không dùng tính năng này thì không có gì được gửi.</li>
+  <li><strong>Dịch vụ AI</strong> (Groq; khi cần có thể dùng Cloudflare Workers AI hoặc OpenRouter): nhận câu bạn gõ cho Trợ lý tìm chuyến hoặc Trợ lý đăng lịch rảnh để rút ra ngày, giờ, địa điểm, số ghế, loại việc. Câu được gửi không kèm tên, mã tài khoản hay vị trí của bạn; số điện thoại và email trong câu được che trước khi gửi. Không dùng trợ lý thì không có gì được gửi.</li>
 </ul>
 <p>Chúng tôi có thể cung cấp dữ liệu khi cơ quan nhà nước có thẩm quyền yêu cầu theo quy định pháp luật.</p>
 
@@ -163,7 +163,7 @@
   <li>Home-helper jobs, availability, work area, conversations between the two parties.</li>
   <li>Ratings, comments and flags you give or receive.</li>
   <li>How many supportive ads you chose to watch (a count only).</li>
-  <li><strong>Sentences you type in the "Type one sentence to fill the form" bar</strong> (if you use it): used only to pre-fill the Find a trip or Post availability form. Most sentences are understood on your device. A sentence your device cannot understand is sent to the AI service listed in section 5, after phone numbers and email addresses are masked automatically. We do not store the sentence on our servers; we only count how many times you used the feature that day.</li>
+  <li><strong>Sentences you type or dictate to the Trip assistant and the Availability assistant</strong> (if you use them): used only to understand what you need, that is your start, destination, date and time, number of seats, type of work and area. Most sentences are understood on your device. A sentence your device cannot understand is sent to the AI service listed in section 5, after phone numbers and email addresses are masked automatically. We do not store this conversation on our servers; we only count how many times you used the feature that day. If you speak instead of typing, speech is turned into text by your phone's keyboard (Apple or Google); the App does not record or receive audio.</li>
 </ul>
 <h3>2.4. Technical data</h3>
 <ul>
@@ -204,7 +204,7 @@
   <li><strong>Map services</strong> (Google Maps Platform, Goong, HERE, LocationIQ): receive coordinates or addresses to find places and compute routes.</li>
   <li><strong>Zalo, Google, Facebook, Apple</strong>: authentication when you sign in with those accounts.</li>
   <li><strong>Telegram</strong>: delivers feedback and abuse reports to administrators; verifies your phone number if you choose to.</li>
-  <li><strong>AI services</strong> (Groq; Cloudflare Workers AI or OpenRouter may be used when needed): receive the sentence you type in the "Type one sentence to fill the form" bar in order to extract the date, time, places, number of seats and type of work. The sentence is sent without your name, account ID or location; phone numbers and email addresses in it are masked first. If you do not use this feature, nothing is sent.</li>
+  <li><strong>AI services</strong> (Groq; Cloudflare Workers AI or OpenRouter may be used when needed): receive the sentence you type for the Trip assistant or the Availability assistant in order to extract the date, time, places, number of seats and type of work. The sentence is sent without your name, account ID or location; phone numbers and email addresses in it are masked first. If you do not use the assistants, nothing is sent.</li>
 </ul>
 <p>We may disclose data when required by competent authorities under applicable law.</p>
 
