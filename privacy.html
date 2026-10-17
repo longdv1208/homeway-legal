@@ -37,8 +37,9 @@
 <ul>
   <li>Điểm đi, điểm đến, điểm đón/trả bạn chọn khi tạo chuyến, tìm chuyến hoặc đặt chỗ.</li>
   <li>Vị trí hiện tại của bạn (khi bạn cho phép) để gợi ý chuyến và địa chỉ gần bạn.</li>
-  <li><strong>Vị trí GPS của tài xế trong lúc chuyến đang chạy</strong>: gửi lên máy chủ khoảng mỗi 300 mét khi ứng dụng đang mở, để khách theo dõi xe. Ứng dụng <strong>không</strong> theo dõi vị trí khi chạy nền. Vị trí này bị xoá khi chuyến kết thúc (và tự động xoá sau tối đa 12 giờ nếu chuyến không được kết thúc).</li>
+  <li><strong>Vị trí GPS của tài xế trong lúc chuyến đang chạy</strong>: gửi lên máy chủ một lần lúc tài xế bấm Bắt đầu chuyến, và sau đó chỉ khi tài xế mở bản đồ toàn màn hình (khoảng mỗi 100–200 mét), để khách biết xe đang ở đâu. Ứng dụng <strong>không</strong> theo dõi vị trí khi chạy nền. Vị trí này bị xoá khi chuyến kết thúc (và tự động xoá sau tối đa 12 giờ nếu chuyến không được kết thúc).</li>
 </ul>
+<p><strong>Ai thấy vị trí của ai:</strong> người duy nhất có vị trí được chia sẻ cho người dùng khác là <strong>tài xế, trong lúc chuyến đang chạy</strong>. <strong>Tài xế không thấy vị trí hiện tại của khách</strong>, chỉ thấy điểm đón và điểm trả khách đã chọn. Vị trí hiện tại của khách chỉ dùng trên máy để tìm chuyến gần, không hiện cho ai. HomeWay <strong>không bán vị trí và không chia sẻ vị trí cho bên thứ ba để quảng cáo</strong>; toạ độ chỉ được gửi cho dịch vụ bản đồ nêu ở mục 5 để tìm địa chỉ và tính đường đi.</p>
 <h3>2.3. Hoạt động trong ứng dụng</h3>
 <ul>
   <li>Chuyến đi, yêu cầu đi nhờ, đề xuất và thoả thuận giá, bảng chia chi phí, vé nhà xe.</li>
@@ -84,7 +85,7 @@
   <li><strong>Google Firebase / Google Cloud</strong>: xác thực, cơ sở dữ liệu, lưu trữ ảnh, thông báo đẩy, chức năng máy chủ, App Check.</li>
   <li><strong>Gmail (Google)</strong>: gửi thư chứa mã xác minh email và mã đặt lại mật khẩu.</li>
   <li><strong>Google AdMob</strong>: hiển thị quảng cáo. AdMob có thể dùng mã quảng cáo của thiết bị; bạn có thể đặt lại hoặc tắt mã này trong cài đặt của thiết bị. Trên iPhone, AdMob chỉ dùng mã này khi bạn bấm <em>Cho phép</em> ở hộp thoại theo dõi của Apple; bạn đổi lại được bất cứ lúc nào trong Cài đặt &gt; Quyền riêng tư &amp; Bảo mật &gt; Theo dõi.</li>
-  <li><strong>Dịch vụ bản đồ</strong> (Google Maps Platform, Goong, HERE, LocationIQ): nhận toạ độ hoặc địa chỉ để tìm địa điểm và tính đường đi.</li>
+  <li><strong>Dịch vụ bản đồ</strong> (Google Maps Platform, Goong, HERE, LocationIQ): nhận toạ độ hoặc địa chỉ để tìm địa điểm và tính đường đi; không nhận tên, số điện thoại hay mã tài khoản của bạn.</li>
   <li><strong>Zalo, Google, Facebook, Apple</strong>: xác thực khi bạn chọn đăng nhập bằng các tài khoản này.</li>
   <li><strong>Telegram</strong>: chuyển góp ý và báo cáo vi phạm tới quản trị viên; xác thực số điện thoại nếu bạn chọn dùng.</li>
   <li><strong>Dịch vụ AI</strong> (Groq; khi Groq quá tải thì Google Gemini; khi cần có thể dùng Cloudflare Workers AI hoặc OpenRouter): nhận câu bạn gõ cho Trợ lý tìm chuyến hoặc Trợ lý đăng lịch rảnh để rút ra ngày, giờ, địa điểm, số ghế, loại việc. Câu được gửi không kèm tên, mã tài khoản hay vị trí của bạn; số điện thoại và email trong câu được che trước khi gửi. Câu gửi tới Google Gemini (gói miễn phí) có thể được Google dùng để cải thiện dịch vụ của họ, kể cả cho người xem xét. Không dùng trợ lý thì không có gì được gửi.</li>
@@ -156,8 +157,9 @@
 <ul>
   <li>Origins, destinations, pick-up and drop-off points you choose when creating, searching or booking trips.</li>
   <li>Your current location (if you allow it) to suggest nearby trips and addresses.</li>
-  <li><strong>The driver's GPS location while a trip is running</strong>: sent roughly every 300 metres while the App is open so passengers can follow the vehicle. The App does <strong>not</strong> track location in the background. This location is deleted when the trip ends (and automatically within 12 hours if the trip is never ended).</li>
+  <li><strong>The driver's GPS location while a trip is running</strong>: sent once when the driver taps Start trip, and after that only while the driver has the full-screen map open (roughly every 100–200 metres), so passengers know where the vehicle is. The App does <strong>not</strong> track location in the background. This location is deleted when the trip ends (and automatically within 12 hours if the trip is never ended).</li>
 </ul>
+<p><strong>Who sees whose location:</strong> the only location shared with other users is the <strong>driver's, while a trip is running</strong>. <strong>Drivers do not see a passenger's current location</strong>, only the pick-up and drop-off points the passenger chose. A passenger's current location is used on the device to find nearby trips and is not shown to anyone. HomeWay <strong>does not sell location data or share it with third parties for advertising</strong>; coordinates are sent only to the map services listed in section 5 to find addresses and compute routes.</p>
 <h3>2.3. Activity in the App</h3>
 <ul>
   <li>Trips, ride requests, price offers and agreements, cost-sharing tables, company tickets.</li>
@@ -203,7 +205,7 @@
   <li><strong>Google Firebase / Google Cloud</strong>: authentication, database, photo storage, push notifications, server functions, App Check.</li>
   <li><strong>Gmail (Google)</strong>: sends emails containing email verification and password reset codes.</li>
   <li><strong>Google AdMob</strong>: ads. AdMob may use your device's advertising ID; you can reset or disable it in your device settings. On iPhone, AdMob uses it only if you tap <em>Allow</em> in Apple's tracking prompt; you can change this anytime in Settings &gt; Privacy &amp; Security &gt; Tracking.</li>
-  <li><strong>Map services</strong> (Google Maps Platform, Goong, HERE, LocationIQ): receive coordinates or addresses to find places and compute routes.</li>
+  <li><strong>Map services</strong> (Google Maps Platform, Goong, HERE, LocationIQ): receive coordinates or addresses to find places and compute routes; they do not receive your name, phone number or account ID.</li>
   <li><strong>Zalo, Google, Facebook, Apple</strong>: authentication when you sign in with those accounts.</li>
   <li><strong>Telegram</strong>: delivers feedback and abuse reports to administrators; verifies your phone number if you choose to.</li>
   <li><strong>AI services</strong> (Groq; Google Gemini when Groq is busy; Cloudflare Workers AI or OpenRouter may be used when needed): receive the sentence you type for the Trip assistant or the Availability assistant in order to extract the date, time, places, number of seats and type of work. The sentence is sent without your name, account ID or location; phone numbers and email addresses in it are masked first. Sentences sent to Google Gemini (free tier) may be used by Google to improve its services, including review by people. If you do not use the assistants, nothing is sent.</li>
